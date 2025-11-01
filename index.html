@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Road Angels - $ANGELS</title>
 
-<meta name="description" content="Road Angels ($ANGELS) is a community token to support road-safety awareness and verifiable on-chain donations for road-accident victims." />
+<meta name="description" content="Road Angels ($ANGELS): a community token born from personal loss to support road-safety awareness and on-chain transparent donations for road-accident victims and their families." />
 <meta property="og:title" content="Road Angels - $ANGELS" />
-<meta property="og:description" content="Transparent tokenomics, single donations wallet, and on-chain proofs. Be an Angel. Drive Safe. Live On." />
+<meta property="og:description" content="Drive Safe. Live On. Be an Angel. On-chain transparency for donations to victims’ families, orphaned children and road-safety initiatives." />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Road Angels - $ANGELS" />
-<meta name="twitter:description" content="A community token for road-safety support. Donations with on-chain proof." />
+<meta name="twitter:description" content="A symbolic project with a real purpose: remembrance, awareness, and support for road-accident victims." />
 <meta name="twitter:site" content="@RoadAngelsToken" />
 <meta name="twitter:creator" content="@RoadAngelsToken" />
 
@@ -74,7 +74,6 @@ nav{display:flex;align-items:center;gap:18px;font-weight:600}
 .btn{padding:12px 18px;border-radius:10px;border:1px solid var(--border);background:var(--panel);color:var(--text);font-weight:700;box-shadow:var(--shadow)}
 .btn.primary{background:linear-gradient(135deg,var(--primary),var(--primary-2));color:#fff;border-color:transparent;box-shadow:0 10px 24px color-mix(in oklab, var(--primary) 30%, #000 0%)}
 .btn.ghost{background:transparent}
-/* Outline (explorer links) */
 .btn.outline{background:transparent;border:1px solid var(--border);color:var(--text)}
 .btn.outline:hover{opacity:.92}
 
@@ -86,7 +85,7 @@ nav{display:flex;align-items:center;gap:18px;font-weight:600}
   border:1px solid var(--chip-border);
   background:var(--chip-bg);color:var(--chip-text);
   font-size:13px;font-weight:700;line-height:1;letter-spacing:.2px;
-  transition:transform .12s ease, box-shadow .12s ease, background .12s ease, border-color .12s ease
+  transition:transform .12s ease, box-shadow .12s ease
 }
 .chip:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
 .chip:active{transform:translateY(0) scale(.99)}
@@ -112,6 +111,9 @@ footer{padding:30px 0;color:var(--muted);font-size:13px}
 .muted{color:var(--muted)}
 .ca{word-break:break-all}
 
+blockquote{margin:0;padding:16px 18px;border-left:4px solid var(--primary-2);background:color-mix(in oklab, var(--primary) 6%, #fff);border-radius:8px}
+blockquote p{margin:0;color:var(--text)}
+
 @media (max-width:860px){
   .grid{grid-template-columns:1fr}
   .hero h1{font-size:36px}
@@ -130,25 +132,26 @@ footer{padding:30px 0;color:var(--muted);font-size:13px}
     </div>
     <nav>
       <a href="#about">About</a>
+      <a href="#story">Story</a>
       <a href="#token">Tokenomics</a>
       <a href="#donations">Donations</a>
       <a href="#donate">Donate</a>
       <a href="#faq">FAQ</a>
-      <a href="https://x.com/RoadAngelsToken" target="_blank" rel="noopener" title="X / Twitter">X</a>
+      <a href="https://x.com/RoadAngelsToken" target="_blank" rel="noopener" title="X / Twitter">@RoadAngelsToken</a>
       <button id="themeBtn" class="theme-toggle" aria-pressed="false" aria-label="Toggle theme">Light</button>
     </nav>
   </header>
 
   <section class="hero">
     <div class="chips">
-      <a class="chip" href="#token" title="Solana">Solana</a>
-      <a class="chip" href="PUMPFUN_LINK" target="_blank" rel="noopener" title="Open on pump.fun">pump.fun launch</a>
-      <a class="chip" href="#donations" title="On-chain proofs">On-chain proofs</a>
-      <a class="chip" href="#donate" title="Donate">Donate</a>
+      <span class="chip">Solana</span>
+      <a class="chip" href="PUMPFUN_LINK" target="_blank" rel="noopener">pump.fun launch</a>
+      <span class="chip">Transparent donations</span>
+      <a class="chip" href="#donate">Donate</a>
     </div>
 
     <h1>Be an Angel. <span class="accent">Drive Safe. Live On.</span></h1>
-    <p><strong>Road Angels ($ANGELS)</strong> is a community token to raise road-safety awareness and provide verifiable on-chain donations to victims’ associations. Transparent addresses, clear cadence, and public proofs for every donation.</p>
+    <p><strong>Road Angels ($ANGELS)</strong> is a symbolic project with a real purpose: remembrance, awareness, and support for road-accident victims and their families — with clear on-chain transparency.</p>
     <div class="cta-row">
       <a class="btn primary" href="PUMPFUN_LINK" target="_blank" rel="noopener">Buy on pump.fun</a>
       <a class="btn" href="#donate">Donate</a>
@@ -156,7 +159,7 @@ footer{padding:30px 0;color:var(--muted);font-size:13px}
     </div>
   </section>
 
-  <!-- ABOUT + MISSION -->
+  <!-- ABOUT + MISSION (short) -->
   <section id="about">
     <h2>About</h2>
     <p>
@@ -170,26 +173,33 @@ footer{padding:30px 0;color:var(--muted);font-size:13px}
     <p>
       In memory of those who lost their lives on the road — and for everyone who still has a road ahead.
     </p>
+  </section>
 
-    <div class="grid" style="margin-top:16px">
-      <div class="card">
-        <h3>Contract</h3>
-        <p class="mono ca" id="tokenAddress">TOKEN_ADDRESS</p>
-        <div class="cta-row">
-          <a class="btn outline" target="_blank" rel="noopener" href="https://solscan.io/token/TOKEN_ADDRESS">Solscan</a>
-          <a class="btn outline" target="_blank" rel="noopener" href="https://solana.fm/address/TOKEN_ADDRESS">SolanaFM</a>
-          <button class="btn" onclick="copyText('tokenAddress')">Copy</button>
-        </div>
-        <p class="muted" style="margin-top:8px;">Mint/Freeze authority: see FAQ.</p>
-      </div>
-      <div class="card">
-        <h3>Transparency</h3>
-        <div class="kpi"><span class="dot"></span>Donations listed with TX links and memos.</div>
-        <div class="kpi"><span class="dot"></span>Public donations wallet published below.</div>
-        <div class="kpi"><span class="dot"></span>Clear cadence (e.g., monthly) and public reports.</div>
-        <div class="kpi"><span class="dot"></span>Community Q&amp;A on X Spaces.</div>
-      </div>
-    </div>
+  <!-- LONG STORY you provided -->
+  <section id="story">
+    <h2>Story</h2>
+    <blockquote>
+      <p>Not long ago, I lost someone very dear to me.<br/>
+      A young man, only 36 years old — full of life, dreams, and kindness.<br/>
+      A car accident took everything away in a single instant, claiming two lives that night.<br/>
+      Two souls who never made it back home.</p>
+      <p style="margin-top:12px">At first, the pain was unbearable — senseless.<br/>
+      But over time, it turned into something else: a need to create meaning from tragedy, to make sure that his story, and so many others like it, wouldn’t be forgotten.</p>
+      <p style="margin-top:12px">That’s how ANGEL ($ANGEL) was born.<br/>
+      A symbolic project, yet a deeply human one — created to honor those who lost their lives on the road and to remind everyone how fragile and precious life truly is.<br/>
+      Sometimes awareness starts with something simple: slowing down, paying attention, remembering that behind every steering wheel there’s a life waiting to get home.</p>
+      <p style="margin-top:12px">ANGEL is not just another token.<br/>
+      It’s a symbol of love, awareness, and remembrance.<br/>
+      There’s no profit, no speculation — it’s not a meme coin; it’s a message.<br/>
+      A way to use technology and the blockchain to create something transparent and meaningful, something that connects people through a single belief:<br/>
+      “Drive Safe, Live On.”</p>
+      <p style="margin-top:12px">Every person who joins — by sharing a post, a thought, or simply driving more consciously — becomes part of a growing movement of remembrance and prevention.<br/>
+      Over time, the goal is to create a real network of support: a fund or an association that can help the families of road victims and finance road-safety awareness campaigns.</p>
+      <p style="margin-top:12px"><strong>ANGEL ($ANGEL) was born from personal loss, but it speaks to everyone —</strong><br/>
+      to those who have lost someone, to those who survived, and to everyone who drives every day and has the power to make a difference.</p>
+      <p style="margin-top:12px">🕊️ In memory of those who are no longer with us, and for everyone who still has a road ahead.<br/>
+      <strong>Drive Safe. Live On. Be an Angel.</strong></p>
+    </blockquote>
   </section>
 
   <section id="token">
@@ -200,7 +210,7 @@ footer{padding:30px 0;color:var(--muted);font-size:13px}
         <ul>
           <li>Total supply: <strong>1,000,000,000</strong></li>
           <li>Taxes (buy/sell): <strong>0% / 0%</strong> (set on pump.fun)</li>
-          <li>Treasury allocation: <strong>5%</strong> to the donations wallet</li>
+          <li>Treasury allocation: <strong>—</strong> (no team or dev tax; donations via addresses below)</li>
         </ul>
       </div>
       <div class="card">
@@ -208,32 +218,30 @@ footer{padding:30px 0;color:var(--muted);font-size:13px}
         <ul>
           <li><a href="PUMPFUN_LINK" target="_blank" rel="noopener">pump.fun page</a></li>
           <li><a href="https://x.com/RoadAngelsToken" target="_blank" rel="noopener">Official X</a></li>
-          <li><a href="#donations">Donations ledger</a></li>
         </ul>
       </div>
     </div>
   </section>
 
+  <!-- HOW DONATIONS ARE USED -->
   <section id="donations">
-    <h2>Donations — On-chain proof</h2>
+    <h2>Donations — Transparency & Use of Funds</h2>
     <div class="grid">
       <div class="card">
-        <h3>Donations wallet — Solana</h3>
-        <div class="pill">💖 Charity wallet</div>
-        <p class="mono ca" id="msig">A5AD3w1RjiT8oz4GAEBqKxd89Z3TsnFz6aBhHvMytSer</p>
-        <div class="cta-row">
-          <a class="btn outline" target="_blank" rel="noopener" href="https://solscan.io/account/A5AD3w1RjiT8oz4GAEBqKxd89Z3TsnFz6aBhHvMytSer">Solscan</a>
-          <a class="btn outline" target="_blank" rel="noopener" href="https://solana.fm/address/A5AD3w1RjiT8oz4GAEBqKxd89Z3TsnFz6aBhHvMytSer">SolanaFM</a>
-          <button class="btn" onclick="copyText('msig')">Copy</button>
-        </div>
-        <p class="muted" style="margin-top:8px;">All donations are received at this address.</p>
+        <h3>How donations will be used</h3>
+        <ul>
+          <li>Direct help to <strong>families of victims</strong> (urgent needs, funeral costs, immediate support).</li>
+          <li>Support for <strong>orphaned children</strong> (basic assistance, education-related needs through vetted organizations).</li>
+          <li><strong>Psychological and legal</strong> assistance contributions via associations.</li>
+          <li>Funding <strong>road-safety awareness</strong> initiatives and prevention campaigns.</li>
+        </ul>
+        <p class="muted">We’ll post donation tx links and public updates on X. Always verify addresses below before sending.</p>
       </div>
       <div class="card">
-        <h3>Latest donations</h3>
-        <ul class="muted">
-          <li>• 2025-MM-DD — TX: <span class="mono">TX_SIGNATURE_1</span> — Beneficiary: ORG_NAME — Amount: X&nbsp;SOL / USDC</li>
-          <li>• 2025-MM-DD — TX: <span class="mono">TX_SIGNATURE_2</span> — Beneficiary: ORG_NAME — Amount: X&nbsp;SOL / USDC</li>
-        </ul>
+        <h3>Transparency</h3>
+        <div class="kpi"><span class="dot"></span>Public TX links shared on X.</div>
+        <div class="kpi"><span class="dot"></span>No private DMs first. Verify only from official links.</div>
+        <div class="kpi"><span class="dot"></span>Periodic summaries of incoming/outgoing flows.</div>
       </div>
     </div>
   </section>
@@ -285,11 +293,6 @@ footer{padding:30px 0;color:var(--muted);font-size:13px}
           <a class="btn outline" target="_blank" rel="noopener" href="https://mempool.space/address/bc1q2lp07346drsdt79ekv6mn02ehv75z6tlewth3y">View on Explorer</a>
         </div>
       </div>
-
-      <div class="card">
-        <h3>Safety</h3>
-        <p class="muted">Verify addresses here and on explorers before sending. We never DM first. Donations and reports are posted on our X account.</p>
-      </div>
     </div>
   </section>
 
@@ -297,20 +300,20 @@ footer{padding:30px 0;color:var(--muted);font-size:13px}
     <h2>FAQ</h2>
     <div class="grid">
       <div class="card">
-        <h3>How are donations handled?</h3>
-        <p>Donations are received to a public single-signature wallet. We publish transaction links (TX) and periodic reports here and on X so everyone can verify flows on-chain. If the community prefers later, we may migrate to a multisig for shared control.</p>
+        <h3>Is there any “profit” mechanism?</h3>
+        <p>No. This is a purpose-driven project. Donations are voluntary and tracked via public tx links.</p>
       </div>
       <div class="card">
-        <h3>What about the LP?</h3>
-        <p>pump.fun uses a bonding curve; once completed, liquidity is migrated automatically to a DEX. Always confirm details on your token page.</p>
+        <h3>How do I verify?</h3>
+        <p>Always use the addresses shown on this page and check on-chain explorers. We will post updates and tx links on X only from <strong>@RoadAngelsToken</strong>.</p>
       </div>
       <div class="card">
-        <h3>Do you use real-person images?</h3>
-        <p>No, unless there's explicit consent. We use symbolic imagery (candles, ribbons, roads) to respect privacy and dignity.</p>
+        <h3>What about LP and trading?</h3>
+        <p>pump.fun handles the bonding curve; confirm details on your token page. Trading carries risk and is not the focus here.</p>
       </div>
       <div class="card">
         <h3>Risks?</h3>
-        <p>Crypto is risky. No guarantees, no refunds. Spend only what you can afford to lose. Verify all addresses from official links.</p>
+        <p>Crypto is risky. No guarantees or refunds. Donate or participate only if you understand and accept the risks.</p>
       </div>
     </div>
   </section>
@@ -319,7 +322,7 @@ footer{padding:30px 0;color:var(--muted);font-size:13px}
     <div class="disc">
       © <span id="y"></span> Road Angels • Built by the community.
       <a href="PUMPFUN_LINK" target="_blank" rel="noopener">pump.fun</a> •
-      <a href="https://x.com/RoadAngelsToken" target="_blank" rel="noopener">X / Twitter</a>
+      <a href="https://x.com/RoadAngelsToken" target="_blank" rel="noopener">@RoadAngelsToken</a>
     </div>
   </footer>
 </div>
