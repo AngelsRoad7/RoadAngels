@@ -7,7 +7,7 @@
 
 <meta name="description" content="Road Angels ($ANGELS) is a community token to support road-safety awareness and verifiable on-chain donations for road-accident victims." />
 <meta property="og:title" content="Road Angels - $ANGELS" />
-<meta property="og:description" content="Transparent tokenomics, multisig treasury, and on-chain proofs. Be an Angel. Drive Safe. Live On." />
+<meta property="og:description" content="Transparent tokenomics, single donations wallet, and on-chain proofs. Be an Angel. Drive Safe. Live On." />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Road Angels - $ANGELS" />
@@ -78,7 +78,7 @@ nav{display:flex;align-items:center;gap:18px;font-weight:600}
 .btn.outline{background:transparent;border:1px solid var(--border);color:var(--text)}
 .btn.outline:hover{opacity:.92}
 
-/* Chips (contrast + icons + links) */
+/* Chips */
 .chips{display:flex;gap:8px;margin-top:18px;flex-wrap:wrap}
 .chip{
   display:inline-flex;align-items:center;gap:8px;
@@ -90,8 +90,6 @@ nav{display:flex;align-items:center;gap:18px;font-weight:600}
 }
 .chip:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
 .chip:active{transform:translateY(0) scale(.99)}
-.chip svg{width:16px;height:16px;flex:none;opacity:.9}
-.chip .ext{transform:translateY(1px)}
 
 /* Pill (💖 Charity wallet) */
 .pill{
@@ -145,7 +143,6 @@ footer{padding:30px 0;color:var(--muted);font-size:13px}
     <div class="chips">
       <a class="chip" href="#token" title="Solana">Solana</a>
       <a class="chip" href="PUMPFUN_LINK" target="_blank" rel="noopener" title="Open on pump.fun">pump.fun launch</a>
-      <a class="chip" href="#donations" title="Multisig treasury">Multisig treasury</a>
       <a class="chip" href="#donations" title="On-chain proofs">On-chain proofs</a>
       <a class="chip" href="#donate" title="Donate">Donate</a>
     </div>
@@ -159,7 +156,7 @@ footer{padding:30px 0;color:var(--muted);font-size:13px}
     </div>
   </section>
 
-  <!-- ABOUT + MISSION with your requested text -->
+  <!-- ABOUT + MISSION -->
   <section id="about">
     <h2>About</h2>
     <p>
@@ -188,7 +185,7 @@ footer{padding:30px 0;color:var(--muted);font-size:13px}
       <div class="card">
         <h3>Transparency</h3>
         <div class="kpi"><span class="dot"></span>Donations listed with TX links and memos.</div>
-        <div class="kpi"><span class="dot"></span>Multisig address published below.</div>
+        <div class="kpi"><span class="dot"></span>Public donations wallet published below.</div>
         <div class="kpi"><span class="dot"></span>Clear cadence (e.g., monthly) and public reports.</div>
         <div class="kpi"><span class="dot"></span>Community Q&amp;A on X Spaces.</div>
       </div>
@@ -203,7 +200,7 @@ footer{padding:30px 0;color:var(--muted);font-size:13px}
         <ul>
           <li>Total supply: <strong>1,000,000,000</strong></li>
           <li>Taxes (buy/sell): <strong>0% / 0%</strong> (set on pump.fun)</li>
-          <li>Treasury allocation: <strong>5%</strong> to multisig</li>
+          <li>Treasury allocation: <strong>5%</strong> to the donations wallet</li>
         </ul>
       </div>
       <div class="card">
@@ -221,14 +218,15 @@ footer{padding:30px 0;color:var(--muted);font-size:13px}
     <h2>Donations — On-chain proof</h2>
     <div class="grid">
       <div class="card">
-        <h3>Treasury (multisig) — Solana</h3>
-        <p class="mono ca" id="msig">MULTISIG_ADDRESS</p>
+        <h3>Donations wallet — Solana</h3>
+        <div class="pill">💖 Charity wallet</div>
+        <p class="mono ca" id="msig">A5AD3w1RjiT8oz4GAEBqKxd89Z3TsnFz6aBhHvMytSer</p>
         <div class="cta-row">
-          <a class="btn outline" target="_blank" rel="noopener" href="https://solscan.io/account/MULTISIG_ADDRESS">Solscan</a>
-          <a class="btn outline" target="_blank" rel="noopener" href="https://solana.fm/address/MULTISIG_ADDRESS">SolanaFM</a>
+          <a class="btn outline" target="_blank" rel="noopener" href="https://solscan.io/account/A5AD3w1RjiT8oz4GAEBqKxd89Z3TsnFz6aBhHvMytSer">Solscan</a>
+          <a class="btn outline" target="_blank" rel="noopener" href="https://solana.fm/address/A5AD3w1RjiT8oz4GAEBqKxd89Z3TsnFz6aBhHvMytSer">SolanaFM</a>
           <button class="btn" onclick="copyText('msig')">Copy</button>
         </div>
-        <p class="muted" style="margin-top:8px;">Donations sent from this address only.</p>
+        <p class="muted" style="margin-top:8px;">All donations are received at this address.</p>
       </div>
       <div class="card">
         <h3>Latest donations</h3>
@@ -300,7 +298,7 @@ footer{padding:30px 0;color:var(--muted);font-size:13px}
     <div class="grid">
       <div class="card">
         <h3>How are donations handled?</h3>
-        <p>Funds accumulate in a multisig wallet managed by community signers. Periodically, signers execute transfers to registered organizations and publish TX links here and on X.</p>
+        <p>Donations are received to a public single-signature wallet. We publish transaction links (TX) and periodic reports here and on X so everyone can verify flows on-chain. If the community prefers later, we may migrate to a multisig for shared control.</p>
       </div>
       <div class="card">
         <h3>What about the LP?</h3>
