@@ -1,0 +1,114 @@
+<!doctype html>
+</div>
+
+
+<!-- ETHEREUM -->
+<div class="tab-pane mt-6 hidden" id="pane-eth">
+<div class="grid md:grid-cols-2 gap-6 items-center">
+<div>
+<div class="text-gray-400 text-sm">Donation wallet — Ethereum</div>
+<div class="mono break-all" id="addr-eth">ETH_ADDRESS</div>
+<div class="mt-3 flex gap-3">
+<button class="copy px-4 py-2 rounded-xl brand-gradient text-white font-semibold shadow-soft" data-target="addr-eth">Copy address</button>
+<a class="link" href="https://etherscan.io/address/ETH_ADDRESS" target="_blank">View on Etherscan</a>
+</div>
+<p class="mt-3 text-sm text-gray-400">Accettiamo <span class="mono">ETH</span> e stablecoin come <span class="mono">USDT/USDC</span> su rete Ethereum.</p>
+</div>
+<div class="justify-self-center">
+<img src="/qr-eth.png" alt="Ethereum QR" class="h-48 w-48 rounded-2xl shadow-soft"/>
+</div>
+</div>
+</div>
+
+
+<!-- BITCOIN -->
+<div class="tab-pane mt-6 hidden" id="pane-btc">
+<div class="grid md:grid-cols-2 gap-6 items-center">
+<div>
+<div class="text-gray-400 text-sm">Donation wallet — Bitcoin</div>
+<div class="mono break-all" id="addr-btc">BTC_ADDRESS</div>
+<div class="mt-3 flex gap-3">
+<button class="copy px-4 py-2 rounded-xl brand-gradient text-white font-semibold shadow-soft" data-target="addr-btc">Copy address</button>
+<a class="link" href="#" target="_blank" id="btc-explorer">View on Explorer</a>
+</div>
+<p class="mt-3 text-sm text-gray-400">Accettiamo <span class="mono">BTC</span>. Se usi Lightning indica nel memo l’oggetto della donazione (se supportato dal tuo wallet).</p>
+</div>
+<div class="justify-self-center">
+<img src="/qr-btc.png" alt="Bitcoin QR" class="h-48 w-48 rounded-2xl shadow-soft"/>
+</div>
+</div>
+</div>
+
+
+<p class="mt-6 text-xs text-gray-500">Nota: gli indirizzi saranno pubblicati anche sul nostro profilo X. Non inviare fondi se l'indirizzo non coincide esattamente con quello pubblicato qui e sugli explorer ufficiali. Le donazioni e i relativi impieghi verranno rendicontati nella sezione <a class="link" href="#donations">Donations</a>.</p>
+</div>
+
+
+<script>
+// simple tabs
+const tabs = document.querySelectorAll('.tab');
+const panes = {
+sol: document.getElementById('pane-sol'),
+eth: document.getElementById('pane-eth'),
+btc: document.getElementById('pane-btc'),
+};
+tabs.forEach(btn => btn.addEventListener('click', () => {
+const k = btn.dataset.tab;
+Object.values(panes).forEach(p => p.classList.add('hidden'));
+panes[k].classList.remove('hidden');
+}));
+// copy buttons
+document.querySelectorAll('.copy').forEach(btn => btn.addEventListener('click', async () => {
+const id = btn.dataset.target; const el = document.getElementById(id);
+try { await navigator.clipboard.writeText(el.textContent.trim()); btn.textContent = 'Copied!'; setTimeout(()=>btn.textContent='Copy address', 1500); } catch(e) {}
+}));
+// choose a BTC explorer when address is set
+const btcAddr = document.getElementById('addr-btc');
+const btcLink = document.getElementById('btc-explorer');
+const setBtcExplorer = () => {
+const a = btcAddr.textContent.trim();
+if(a.startsWith('bc1')||a.startsWith('1')||a.startsWith('3')) btcLink.href = `https://mempool.space/address/${a}`;
+};
+setBtcExplorer();
+</script>
+</section>
+
+
+<!-- FAQ -->
+<section id="faq" class="mx-auto max-w-6xl px-4 py-16">
+<h2 class="text-2xl md:text-3xl font-extrabold">FAQ</h2>
+<div class="mt-6 grid md:grid-cols-2 gap-6">
+<div class="p-6 rounded-2xl glass">
+<div class="font-semibold">How are donations handled?</div>
+<p class="mt-2 text-gray-300 text-sm">Funds accumulate in a multisig wallet managed by signers from the community. Periodically, signers execute transfers to registered organizations and publish TX links here and on X.</p>
+</div>
+<div class="p-6 rounded-2xl glass">
+<div class="font-semibold">What about the LP?</div>
+<p class="mt-2 text-gray-300 text-sm">pump.fun uses a bonding curve; once the token "completes" per pump.fun criteria, it migrates liquidity to a DEX automatically. Always confirm details on your token page.</p>
+</div>
+<div class="p-6 rounded-2xl glass">
+<div class="font-semibold">Any real‑person imagery?</div>
+<p class="mt-2 text-gray-300 text-sm">We avoid using photos of real victims without explicit consent. We use symbolic art (candles, ribbons) to respect privacy and dignity.</p>
+</div>
+<div class="p-6 rounded-2xl glass">
+<div class="font-semibold">Risks?</div>
+<p class="mt-2 text-gray-300 text-sm">Crypto is risky. Taxes and parameters are visible on pump.fun; there are no guarantees or refunds. Always verify addresses before sending.</p>
+</div>
+</div>
+</section>
+
+
+<!-- Footer -->
+<footer class="mx-auto max-w-6xl px-4 py-16 text-sm text-gray-400">
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+<div>© <span id="y"></span> Road Angels • Built by the community</div>
+<div class="flex gap-4">
+<a class="link" href="PUMPFUN_LINK" target="_blank">pump.fun</a>
+<a class="link" href="https://x.com/X_HANDLE" target="_blank">X / Twitter</a>
+<a class="link" href="#faq">FAQ</a>
+</div>
+</div>
+<script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+</footer>
+</body>
+</html>
