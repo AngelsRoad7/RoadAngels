@@ -35,6 +35,11 @@
   --badge-bg:#eef4ff;
   --badge-text:#0f172a;
   --badge-border:#cfe4ff;
+
+  /* charity pill (light) */
+  --charity-bg:#ffeaf3;
+  --charity-border:#ffc4d9;
+  --charity-text:#7a1540;
 }
 /* DARK (Amber) */
 html[data-theme="dark"]{
@@ -51,6 +56,11 @@ html[data-theme="dark"]{
   --badge-bg:#1a1a26;
   --badge-text:#ffffff;
   --badge-border:#2a2a3b;
+
+  /* charity pill (dark) */
+  --charity-bg:#2a1420;
+  --charity-border:#4a2236;
+  --charity-text:#ffd1e2;
 }
 
 /* ============ BASE ============ */
@@ -63,7 +73,7 @@ a{color:var(--primary);text-decoration:none}
 header{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .logo{display:flex;align-items:center;gap:12px}
 .logo-mark{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,var(--primary),var(--primary-2));box-shadow:var(--shadow);display:inline-block;vertical-align:middle}
-.brand{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;font-weight:800;font-size:18px;letter-spacing:-.02em;line-height:1}
+.brand{font-weight:800;font-size:18px;letter-spacing:-.02em;line-height:1}
 .badge{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:700;border:1px solid var(--badge-border);background:var(--badge-bg);color:var(--badge-text)}
 nav{display:flex;align-items:center;gap:18px;font-weight:600}
 
@@ -115,6 +125,14 @@ footer{padding:30px 0;color:var(--muted);font-size:13px}
 /* QR */
 .qr{width:120px;height:120px;border-radius:10px;background:color-mix(in oklab, var(--primary) 6%, #fff);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:12px;box-shadow:var(--shadow)}
 
+/* Charity pill */
+.pill{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:6px 10px; border-radius:999px;
+  font-size:12px; font-weight:800; letter-spacing:.2px;
+  border:1px solid var(--charity-border); background:var(--charity-bg); color:var(--charity-text);
+}
+
 @media (max-width:860px){
   .grid{grid-template-columns:1fr}
   .hero h1{font-size:36px}
@@ -133,6 +151,7 @@ footer{padding:30px 0;color:var(--muted);font-size:13px}
     </div>
     <nav>
       <a href="#about">About</a>
+      <a href="#mission">Mission</a>
       <a href="#token">Tokenomics</a>
       <a href="#donations">Donations</a>
       <a href="#donate">Donate</a>
@@ -152,12 +171,12 @@ footer{padding:30px 0;color:var(--muted);font-size:13px}
               <stop offset="0" stop-color="#14F195"/><stop offset="1" stop-color="#9945FF"/>
             </linearGradient>
           </defs>
-          <path d="M5 7.5a1 1 0 0 1 1-1h12.5l-2.2 2.2H6a1 1 0 0 1-1-1Zm0 4.5a1 1 0 0 1 1-1h12.5l-2.2 2.2H6a1 1 0 0 1-1-1Zm0 4.5a1 1 0 0 1 1-1h12.5l-2.2 2.2H6a1 1 0 0 1-1-1Z" fill="url(#solgrad)"/>
+        <path d="M5 7.5a1 1 0 0 1 1-1h12.5l-2.2 2.2H6a1 1 0 0 1-1-1Zm0 4.5a1 1 0 0 1 1-1h12.5l-2.2 2.2H6a1 1 0 0 1-1-1Zm0 4.5a1 1 0 0 1 1-1h12.5l-2.2 2.2H6a1 1 0 0 1-1-1Z" fill="url(#solgrad)"/>
         </svg>
         Solana
       </a>
 
-      <!-- pump.fun (link esterno) -->
+      <!-- pump.fun -->
       <a class="chip" href="PUMPFUN_LINK" target="_blank" rel="noopener" title="Open on pump.fun">
         <svg viewBox="0 0 24 24" class="ext" aria-hidden="true">
           <path d="M14 5h5v5m0-5-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -166,7 +185,7 @@ footer{padding:30px 0;color:var(--muted);font-size:13px}
         pump.fun launch
       </a>
 
-      <!-- Multisig treasury -->
+      <!-- Multisig -->
       <a class="chip" href="#donations" title="Multisig treasury">
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
@@ -175,7 +194,7 @@ footer{padding:30px 0;color:var(--muted);font-size:13px}
         Multisig treasury
       </a>
 
-      <!-- On-chain proofs -->
+      <!-- Proofs -->
       <a class="chip" href="#donations" title="On-chain proofs">
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="M10 13a5 5 0 0 0 7 0l2-2a5 5 0 0 0-7-7l-1.5 1.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -193,7 +212,11 @@ footer{padding:30px 0;color:var(--muted);font-size:13px}
       </a>
     </div>
 
-    <h1>Be an Angel. <span class="accent">Drive. Live On.</span></h1>
+    <!-- Header copy chiesto -->
+    <h1>
+      <span class="accent">Drive Safe, Live On</span><br/>
+      Be an Angel.
+    </h1>
     <p><strong>Road Angels ($ANGELS)</strong> is a community token to raise road-safety awareness and provide verifiable on-chain donations to victims’ associations. Transparent addresses, clear cadence, and public proofs for every donation.</p>
     <div class="cta-row">
       <a class="btn primary" href="PUMPFUN_LINK" target="_blank" rel="noopener">Buy on pump.fun</a>
@@ -204,7 +227,10 @@ footer{padding:30px 0;color:var(--muted);font-size:13px}
 
   <section id="about">
     <h2>What is Road Angels?</h2>
-    <p>A respectful, mission-first project: fewer accidents, more support. We avoid using real-person imagery without consent. Funds accumulate in a <strong>multisig treasury</strong> and are periodically transferred to vetted organizations.</p>
+    <!-- Testo About richiesto -->
+    <p>This project was born from the pain of losing someone I loved — a young life taken too soon in a road accident.</p>
+    <p>ANGEL ($ANGEL) is a symbol of love, awareness, and remembrance. It’s not about profit. It’s about purpose.</p>
+
     <div class="grid">
       <div class="card">
         <h3>Contract</h3>
@@ -223,6 +249,14 @@ footer{padding:30px 0;color:var(--muted);font-size:13px}
         <div class="kpi"><span class="dot"></span>Clear cadence (e.g., monthly) and public reports.</div>
         <div class="kpi"><span class="dot"></span>Community Q&A on X Spaces.</div>
       </div>
+    </div>
+  </section>
+
+  <!-- Sezione Mission richiesta -->
+  <section id="mission">
+    <h2>Mission</h2>
+    <div class="card">
+      <p>In memory of those who lost their lives on the road — and for everyone who still has a road ahead.</p>
     </div>
   </section>
 
@@ -277,45 +311,89 @@ footer{padding:30px 0;color:var(--muted);font-size:13px}
       <!-- SOLANA -->
       <div class="card">
         <h3>Solana (SOL/USDC)</h3>
+        <div class="pill">💖 Charity wallet</div>
         <p class="mono ca" id="sol">A5AD3w1RjiT8oz4GAEBqKxd89Z3TsnFz6aBhHvMytSer</p>
-        <div class="cta-row">
-          <a class="btn" target="_blank" rel="noopener" href="https://solscan.io/account/A5AD3w1RjiT8oz4GAEBqKxd89Z3TsnFz6aBhHvMytSer">Solscan</a>
-          <button class="btn" onclick="copyText('sol')">Copy</button>
-          <img class="qr" src="qr-sol.png" alt="Solana QR" onerror="this.outerHTML='<div class=qr>qr-sol.png</div>'">
+
+        <div class="cta-row" style="gap:8px;flex-wrap:wrap">
+          <input id="sol-amt" type="number" step="0.0001" placeholder="Amount (SOL)" class="btn" style="width:160px">
+          <input id="sol-memo" type="text" placeholder="Memo/Label (opt.)" class="btn" style="width:220px">
+          <button class="btn" onclick="genSol()">Generate QR</button>
+          <a id="sol-link" class="btn ghost" href="#" target="_blank" rel="noopener">Open in wallet</a>
         </div>
-        <p class="muted">Accepts <span class="mono">SOL</span> and <span class="mono">USDC (SPL)</span>. Add a memo if you like.</p>
+
+        <div class="cta-row">
+          <a class="btn" target="_blank" rel="noopener"
+             href="https://solscan.io/account/A5AD3w1RjiT8oz4GAEBqKxd89Z3TsnFz6aBhHvMytSer">Solscan</a>
+          <button class="btn" onclick="copyText('sol')">Copy</button>
+          <img id="sol-qr" class="qr" src="qr-sol.png" alt="Solana QR"
+               onerror="this.outerHTML='<div class=qr>qr-sol.png</div>'">
+        </div>
+        <p class="muted">Accepts <span class="mono">SOL</span> and <span class="mono">USDC (SPL)</span>.</p>
       </div>
 
       <!-- ETHEREUM -->
       <div class="card">
         <h3>Ethereum (ETH/USDT/USDC)</h3>
+        <div class="pill">💖 Charity wallet</div>
         <p class="mono ca" id="eth">0x493d29437F2c34BB7433e32c2C2dd2015724Bce8</p>
+
+        <div class="cta-row" style="gap:8px;flex-wrap:wrap">
+          <input id="eth-amt" type="number" step="0.0001" placeholder="Amount (ETH)" class="btn" style="width:160px">
+          <input id="eth-memo" type="text" placeholder="Label/Message (opt.)" class="btn" style="width:220px">
+          <button class="btn" onclick="genEth()">Generate QR</button>
+          <a id="eth-link" class="btn ghost" href="#" target="_blank" rel="noopener">Open in wallet</a>
+        </div>
+
         <div class="cta-row">
-          <a class="btn" target="_blank" rel="noopener" href="https://etherscan.io/address/0x493d29437F2c34BB7433e32c2C2dd2015724Bce8">Etherscan</a>
+          <a class="btn" target="_blank" rel="noopener"
+             href="https://etherscan.io/address/0x493d29437F2c34BB7433e32c2C2dd2015724Bce8">Etherscan</a>
           <button class="btn" onclick="copyText('eth')">Copy</button>
-          <img class="qr" src="qr-eth.png" alt="Ethereum QR" onerror="this.outerHTML='<div class=qr>qr-eth.png</div>'">
+          <img id="eth-qr" class="qr" src="qr-eth.png" alt="Ethereum QR"
+               onerror="this.outerHTML='<div class=qr>qr-eth.png</div>'">
         </div>
       </div>
 
-      <!-- BINANCE SMART CHAIN -->
+      <!-- BNB CHAIN -->
       <div class="card">
         <h3>BNB Smart Chain (BNB/BUSD/USDT)</h3>
+        <div class="pill">💖 Charity wallet</div>
         <p class="mono ca" id="bnb">0x493d29437F2c34BB7433e32c2C2dd2015724Bce8</p>
+
+        <div class="cta-row" style="gap:8px;flex-wrap:wrap">
+          <input id="bnb-amt" type="number" step="0.0001" placeholder="Amount (BNB)" class="btn" style="width:160px">
+          <input id="bnb-memo" type="text" placeholder="Label/Message (opt.)" class="btn" style="width:220px">
+          <button class="btn" onclick="genBnb()">Generate QR</button>
+          <a id="bnb-link" class="btn ghost" href="#" target="_blank" rel="noopener">Open in wallet</a>
+        </div>
+
         <div class="cta-row">
-          <a class="btn" target="_blank" rel="noopener" href="https://bscscan.com/address/0x493d29437F2c34BB7433e32c2C2dd2015724Bce8">BscScan</a>
+          <a class="btn" target="_blank" rel="noopener"
+             href="https://bscscan.com/address/0x493d29437F2c34BB7433e32c2C2dd2015724Bce8">BscScan</a>
           <button class="btn" onclick="copyText('bnb')">Copy</button>
-          <img class="qr" src="qr-bnb.png" alt="BNB QR" onerror="this.outerHTML='<div class=qr>qr-bnb.png</div>'">
+          <img id="bnb-qr" class="qr" src="qr-bnb.png" alt="BNB QR"
+               onerror="this.outerHTML='<div class=qr>qr-bnb.png</div>'">
         </div>
       </div>
 
       <!-- BITCOIN -->
       <div class="card">
         <h3>Bitcoin (BTC)</h3>
+        <div class="pill">💖 Charity wallet</div>
         <p class="mono ca" id="btc">bc1q2lp07346drsdt79ekv6mn02ehv75z6tlewth3y</p>
+
+        <div class="cta-row" style="gap:8px;flex-wrap:wrap">
+          <input id="btc-amt" type="number" step="0.00000001" placeholder="Amount (BTC)" class="btn" style="width:160px">
+          <input id="btc-msg" type="text" placeholder="Label/Message (opt.)" class="btn" style="width:220px">
+          <button class="btn" onclick="genBtc()">Generate QR</button>
+          <a id="btc-link" class="btn ghost" href="#" target="_blank" rel="noopener">Open in wallet</a>
+        </div>
+
         <div class="cta-row">
-          <a class="btn" target="_blank" rel="noopener" href="https://mempool.space/address/bc1q2lp07346drsdt79ekv6mn02ehv75z6tlewth3y">Explorer</a>
+          <a class="btn" target="_blank" rel="noopener"
+             href="https://mempool.space/address/bc1q2lp07346drsdt79ekv6mn02ehv75z6tlewth3y">Explorer</a>
           <button class="btn" onclick="copyText('btc')">Copy</button>
-          <img class="qr" src="qr-btc.png" alt="Bitcoin QR" onerror="this.outerHTML='<div class=qr>qr-btc.png</div>'">
+          <img id="btc-qr" class="qr" src="qr-btc.png" alt="Bitcoin QR"
+               onerror="this.outerHTML='<div class=qr>qr-btc.png</div>'">
         </div>
       </div>
 
@@ -386,6 +464,66 @@ function copyText(id){
     btn.setAttribute('aria-pressed', next === 'dark');
   });
 })();
+
+/* --- QR helpers: costruiscono URI e aggiornano il QR via api.qrserver.com --- */
+
+/* Solana: solana:<address>?amount=<SOL>&label=&message= */
+function genSol(){
+  const addr = document.getElementById('sol').textContent.trim();
+  const amt  = (document.getElementById('sol-amt').value || '').trim();
+  const memo = (document.getElementById('sol-memo').value || '').trim();
+  const params = new URLSearchParams();
+  if(amt)  params.set('amount', amt);
+  if(memo){ params.set('message', memo); params.set('label', memo); }
+  const uri = `solana:${addr}` + (params.toString()?`?${params.toString()}`:'');
+  document.getElementById('sol-link').href = uri;
+  document.getElementById('sol-qr').src = `https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=${encodeURIComponent(uri)}`;
+}
+
+/* Ethereum/BSC (EIP-681): ethereum:<addr>@chainId?value=<wei>&label= */
+/* value deve essere in WEI */
+function toWei(x){
+  const n = Number(x);
+  if(!isFinite(n)) return '';
+  return (BigInt(Math.round(n * 1e6)) * BigInt(1e12)).toString(); // 6+12 per evitare floating errors
+}
+function genEth(){
+  const addr = document.getElementById('eth').textContent.trim();
+  const amt  = (document.getElementById('eth-amt').value || '').trim();
+  const msg  = (document.getElementById('eth-memo').value || '').trim();
+  let uri = `ethereum:${addr}@1`;
+  const params = new URLSearchParams();
+  if(amt){ params.set('value', toWei(amt)); }
+  if(msg){ params.set('label', msg); params.set('message', msg); }
+  uri += params.toString()?`?${params.toString()}`:'';
+  document.getElementById('eth-link').href = uri;
+  document.getElementById('eth-qr').src = `https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=${encodeURIComponent(uri)}`;
+}
+function genBnb(){
+  const addr = document.getElementById('bnb').textContent.trim();
+  const amt  = (document.getElementById('bnb-amt').value || '').trim();
+  const msg  = (document.getElementById('bnb-memo').value || '').trim();
+  let uri = `ethereum:${addr}@56`; // BSC chainId 56
+  const params = new URLSearchParams();
+  if(amt){ params.set('value', toWei(amt)); }
+  if(msg){ params.set('label', msg); params.set('message', msg); }
+  uri += params.toString()?`?${params.toString()}`:'';
+  document.getElementById('bnb-link').href = uri;
+  document.getElementById('bnb-qr').src = `https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=${encodeURIComponent(uri)}`;
+}
+
+/* Bitcoin: BIP-21 bitcoin:<address>?amount=&label=&message= */
+function genBtc(){
+  const addr = document.getElementById('btc').textContent.trim();
+  const amt  = (document.getElementById('btc-amt').value || '').trim();
+  const msg  = (document.getElementById('btc-msg').value || '').trim();
+  const params = new URLSearchParams();
+  if(amt)  params.set('amount', amt);
+  if(msg){ params.set('label', msg); params.set('message', msg); }
+  const uri = `bitcoin:${addr}` + (params.toString()?`?${params.toString()}`:'');
+  document.getElementById('btc-link').href = uri;
+  document.getElementById('btc-qr').src = `https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=${encodeURIComponent(uri)}`;
+}
 </script>
 </body>
 </html>
