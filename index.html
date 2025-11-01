@@ -30,6 +30,11 @@
   --chip-bg:#eaf3ff;
   --chip-text:#0f172a;
   --chip-border:#cfe4ff;
+
+  /* badge (light) */
+  --badge-bg:#eef4ff;
+  --badge-text:#0f172a;
+  --badge-border:#cfe4ff;
 }
 /* DARK (Amber) */
 html[data-theme="dark"]{
@@ -41,6 +46,11 @@ html[data-theme="dark"]{
   --chip-bg:#14141d;
   --chip-text:#e9e9ef;
   --chip-border:#2a2a3b;
+
+  /* badge (dark) */
+  --badge-bg:#1a1a26;
+  --badge-text:#ffffff;
+  --badge-border:#2a2a3b;
 }
 
 /* ============ BASE ============ */
@@ -52,8 +62,9 @@ a{color:var(--primary);text-decoration:none}
 /* Header / Logo */
 header{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .logo{display:flex;align-items:center;gap:12px}
-.logo-mark{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,var(--primary),var(--primary-2));box-shadow:var(--shadow)}
-.badge{display:inline-flex;gap:8px;align-items:center;padding:6px 10px;border:1px solid var(--border);border-radius:999px;background:color-mix(in oklab, var(--primary) 10%, #fff);color:var(--text);font-size:12px;font-weight:600}
+.logo-mark{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,var(--primary),var(--primary-2));box-shadow:var(--shadow);display:inline-block;vertical-align:middle}
+.brand{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;font-weight:800;font-size:18px;letter-spacing:-.02em;line-height:1}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:700;border:1px solid var(--badge-border);background:var(--badge-bg);color:var(--badge-text)}
 nav{display:flex;align-items:center;gap:18px;font-weight:600}
 
 /* Theme toggle button */
@@ -117,7 +128,7 @@ footer{padding:30px 0;color:var(--muted);font-size:13px}
   <header>
     <div class="logo">
       <div class="logo-mark" aria-hidden="true"></div>
-      <span class="mono" style="font-weight:700;">Road Angels</span>
+      <span class="brand">Road Angels</span>
       <span class="badge"><span>$ANGELS</span></span>
     </div>
     <nav>
@@ -263,33 +274,51 @@ footer{padding:30px 0;color:var(--muted);font-size:13px}
   <section id="donate">
     <h2>Donate</h2>
     <div class="grid">
+      <!-- SOLANA -->
       <div class="card">
         <h3>Solana (SOL/USDC)</h3>
-        <p class="mono ca" id="sol">MULTISIG_ADDRESS</p>
+        <p class="mono ca" id="sol">A5AD3w1RjiT8oz4GAEBqKxd89Z3TsnFz6aBhHvMytSer</p>
         <div class="cta-row">
+          <a class="btn" target="_blank" rel="noopener" href="https://solscan.io/account/A5AD3w1RjiT8oz4GAEBqKxd89Z3TsnFz6aBhHvMytSer">Solscan</a>
           <button class="btn" onclick="copyText('sol')">Copy</button>
           <img class="qr" src="qr-sol.png" alt="Solana QR" onerror="this.outerHTML='<div class=qr>qr-sol.png</div>'">
         </div>
         <p class="muted">Accepts <span class="mono">SOL</span> and <span class="mono">USDC (SPL)</span>. Add a memo if you like.</p>
       </div>
+
+      <!-- ETHEREUM -->
       <div class="card">
         <h3>Ethereum (ETH/USDT/USDC)</h3>
-        <p class="mono ca" id="eth">ETH_ADDRESS</p>
+        <p class="mono ca" id="eth">0x493d29437F2c34BB7433e32c2C2dd2015724Bce8</p>
         <div class="cta-row">
-          <a class="btn" target="_blank" rel="noopener" href="https://etherscan.io/address/ETH_ADDRESS">Etherscan</a>
+          <a class="btn" target="_blank" rel="noopener" href="https://etherscan.io/address/0x493d29437F2c34BB7433e32c2C2dd2015724Bce8">Etherscan</a>
           <button class="btn" onclick="copyText('eth')">Copy</button>
           <img class="qr" src="qr-eth.png" alt="Ethereum QR" onerror="this.outerHTML='<div class=qr>qr-eth.png</div>'">
         </div>
       </div>
+
+      <!-- BINANCE SMART CHAIN -->
+      <div class="card">
+        <h3>BNB Smart Chain (BNB/BUSD/USDT)</h3>
+        <p class="mono ca" id="bnb">0x493d29437F2c34BB7433e32c2C2dd2015724Bce8</p>
+        <div class="cta-row">
+          <a class="btn" target="_blank" rel="noopener" href="https://bscscan.com/address/0x493d29437F2c34BB7433e32c2C2dd2015724Bce8">BscScan</a>
+          <button class="btn" onclick="copyText('bnb')">Copy</button>
+          <img class="qr" src="qr-bnb.png" alt="BNB QR" onerror="this.outerHTML='<div class=qr>qr-bnb.png</div>'">
+        </div>
+      </div>
+
+      <!-- BITCOIN -->
       <div class="card">
         <h3>Bitcoin (BTC)</h3>
-        <p class="mono ca" id="btc">BTC_ADDRESS</p>
+        <p class="mono ca" id="btc">bc1q2lp07346drsdt79ekv6mn02ehv75z6tlewth3y</p>
         <div class="cta-row">
-          <a class="btn" target="_blank" rel="noopener" href="https://mempool.space/address/BTC_ADDRESS">Explorer</a>
+          <a class="btn" target="_blank" rel="noopener" href="https://mempool.space/address/bc1q2lp07346drsdt79ekv6mn02ehv75z6tlewth3y">Explorer</a>
           <button class="btn" onclick="copyText('btc')">Copy</button>
           <img class="qr" src="qr-btc.png" alt="Bitcoin QR" onerror="this.outerHTML='<div class=qr>qr-btc.png</div>'">
         </div>
       </div>
+
       <div class="card">
         <h3>Safety</h3>
         <p class="muted">Verify addresses here and on explorers before sending. We never DM first. Donations and reports are posted on our X account.</p>
@@ -336,7 +365,7 @@ document.getElementById('y').textContent = new Date().getFullYear();
 function copyText(id){
   var el = document.getElementById(id);
   var t = el ? (el.textContent||'').trim() : '';
-  if(!t || t.indexOf('ADDRESS')>=0){ alert('Address not set yet.'); return; }
+  if(!t){ alert('Address not set yet.'); return; }
   navigator.clipboard.writeText(t).then(function(){ alert('Copied'); });
 }
 
